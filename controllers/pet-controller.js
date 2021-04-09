@@ -91,13 +91,13 @@ PetController.route("/:id")
       },
     });
     console.log(toUpdate)
-    if (toUpdate) {
-      toUpdate.petName !== '' ? toUpdate.petName = petName : req.params.petName
-      toUpdate.petAge !== '' ? toUpdate.petAge = petAge : req.params.petAge
-      toUpdate.ageMetric !== '' ? toUpdate.ageMetric = ageMetric : req.params.ageMetric
-      toUpdate.typeOfPet !== '' ? toUpdate.typeOfPet = typeOfPet : req.params.typeOfPet
-      toUpdate.breed !== '' ? toUpdate.breed = breed : req.params.breed
-    //   console.log(toUpdate)
+    if (toUpdate && petName) {
+      toUpdate.petName = petName 
+      toUpdate.petAge = petAge 
+      toUpdate.ageMetric = ageMetric 
+      toUpdate.typeOfPet = typeOfPet 
+      toUpdate.breed = breed 
+      console.log(toUpdate)
       await toUpdate.save();
       res.status(200).json({
         message: "updated pet successfully",
@@ -119,7 +119,7 @@ PetController.route("/:id")
     const petToRemove = await PetModel.findOne({
       where: {
         id: req.params.id,
-        createdBy: req.user.id,
+        userId: req.user.id,
       },
     });
     petToRemove

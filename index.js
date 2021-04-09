@@ -11,7 +11,7 @@ app.use(Express.json())
 app.use(cors)
 
 app.use('/user', controllers.usercontroller);
-app.use('/pet', validate, controllers.petcontroller)
+app.use('/pet', validate , controllers.petcontroller)
 
 app.get("/", (req, res) => {
     res.json({
