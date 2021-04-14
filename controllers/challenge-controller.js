@@ -1,6 +1,6 @@
 // Once you have debugged the server, the next couple challenges will be creating
 // a new controller, based upon the challenges we will provide over the next few days
-
+console.log('JS to push to github')
 
 
 // Challenge one: 
