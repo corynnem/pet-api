@@ -18,8 +18,8 @@ PetController.post("/newPet", async (req, res) => {
       });
       console.log(req.user)
       res.json({
-        message: "List Created",
-        list: newPet,
+        message: "Pet Created",
+        pet: newPet,
       });
     } catch (e) {
       console.log(e);

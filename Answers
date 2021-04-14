@@ -1,0 +1,208 @@
+There are 11 errors to solve, one in each file
+
+Challenge 1: 
+index.js line 2
+
+error: 
+internal/modules/cjs/loader.js:883
+  throw err;
+  ^
+
+Error: Cannot find module 'espress'
+Require stack:
+- C:\Users\efa12\Desktop\broken-pet-api\index.js
+
+what it is:         const Express = require('espress')
+what it should be:  const Express = require('express)
+
+
+
+Challenge 2: 
+db.js line 4
+
+error:
+ C:\Users\efa12\Desktop\broken-pet-api\db.js:4
+const db = naw Sequelize(process.env.DATABASE_URL)
+              ^^^^^^^^^
+
+SyntaxError: Unexpected identifier
+
+what it is:         const db = naw Sequelize(process.env.DATABASE_URL)
+what it should be:  const db = new Sequelize(process.env.DATABASE_URL)
+
+
+
+Challenge 3: 
+user.js line 6
+
+error:
+ C:\Users\efa12\Desktop\broken-pet-api\node_modules\sequelize\lib\model.js:1001
+        throw new Error(`Unrecognized datatype for attribute "${this.name}.${name}"`);
+        ^
+
+Error: Unrecognized datatype for attribute "user.username"
+
+what it is:         tope: DataTypes.STRING(100),
+what it should be:  type: DataTypes.STRING(100),
+
+
+
+Challenge 4: 
+
+pet.js line 4
+
+error:
+C:\Users\efa12\Desktop\broken-pet-api\models\pet.js:4
+cosnt Pet = db.define('pet', {
+
+
+SyntaxError: Unexpected identifier
+
+what it is:         cosnt Pet = db.define('pet', {
+what it should be:  const Pet = db.define('pet', {
+
+
+
+Challenge 5: 
+
+/models/index.js line 9
+
+error:
+C:\Users\efa12\Desktop\broken-pet-api\models\index.js:9
+model.exports = {
+^
+
+ReferenceError: model is not defined
+
+what it is:         model.exports = {
+what it should be:  module.exports = {
+
+
+
+
+
+Challenge 6: 
+
+cors-middleware.js line 9
+
+error: 
+TypeError: res.headers is not a function
+    at cors (C:\Users\efa12\Desktop\broken-pet-api\middlewares\cors-middlewares.js:2:9)
+
+what it is:           res.headers('Access-Control-Allow-Origin', '*');
+what it should be:    res.header('Access-Control-Allow-Origin', '*');
+
+
+
+
+
+
+Challenge 7: 
+
+validate-session.js line 9
+
+error: 
+internal/modules/cjs/loader.js:883
+  throw err;
+  ^
+
+Error: Cannot find module 'jwt'
+
+
+what it is:           const jwt = require('jwt');
+what it should be:    const jwt = require('jsonwebtoken');
+
+
+
+
+
+Challenge 8: 
+
+/middlewares/index.js line 3
+
+error:
+internal/modules/cjs/loader.js:883
+  throw err;
+  ^
+
+Error: Cannot find module './validate-sessions'
+
+what it is:          validate : require('./validate-sessions')
+what it should be:   validate : require('./validate-session')
+
+
+
+
+
+
+
+
+
+
+Challenge 9: 
+
+pet-controller.js line 33
+
+
+C:\Users\efa12\Desktop\broken-pet-api\controllers\pet-controller.js:35
+      const pets = await PetModel.findAll({
+                   ^^^^^
+
+SyntaxError: await is only valid in async function
+
+what it is:          PetController.get("/all",  (req, res) => {
+what it should be:   PetController.get("/all", async, (req, res) => {
+
+
+
+
+
+
+
+
+Challenge 10: 
+
+user-controller.js line 60
+
+C:\Users\efa12\Desktop\broken-pet-api\node_modules\express\lib\router\index.js:458
+      throw new TypeError('Router.use() requires a middleware function but got a 
+' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+
+
+what it is:         missing
+what it should be:  module.exports = userController;
+
+
+
+
+
+
+
+
+
+
+
+Challenge 11: 
+
+/controllers/index.js line 33
+
+C:\Users\efa12\Desktop\broken-pet-api\controllers\index.js:2
+    usercontroller: require('./user-controller'),
+                  ^
+
+SyntaxError: Unexpected token ':'
+
+what it is:          module.exports = 
+                        usercontroller: require('./user-controller'),
+                        petcontroller: require('./pet-controller')
+
+what it should be:   module.exports = {
+                        usercontroller: require('./user-controller'),
+                        petcontroller: require('./pet-controller')
+                    }
+
+
+
