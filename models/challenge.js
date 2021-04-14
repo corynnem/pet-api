@@ -8,3 +8,4 @@
         //   age                number
         //   privateProfile     boolean 
 // make sure to export your model and import into your '/models/index.js'.
+console.log('JS to push to github')
