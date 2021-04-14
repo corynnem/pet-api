@@ -32,3 +32,31 @@ make sure you are using
 
 feel free to use notes from pie the walkthrough and your eleven-journal server
 */
+
+
+
+
+// Challenge three: 
+/*
+Create an endpoint to update a user's profile
+make sure you are using 
+- async/await 
+- try/catch
+- 200 status ok message
+- 400 error message
+
+feel free to use notes from pie the walkthrough and your eleven-journal server
+*/
+
+
+// Challenge Four: 
+/*
+Create an endpoint to delete a user's profile
+make sure you are using 
+- async/await 
+- try/catch
+- 200 status ok message
+- 400 error message
+
+feel free to use notes from pie the walkthrough and your eleven-journal server
+*/
